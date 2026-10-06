@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Make the First Version of Your Legal Precedent-Finding Search Agent</title>
+<meta name="description" content="A first version you can actually finish: four prompts, three setup pieces, and one loop that keeps score against your own search.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#18181B">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="How to Make the First Version of Your Legal Precedent-Finding Search Agent">
+<meta property="og:description" content="Built for Gaurav: free tools, four prompts, and a loop that matches your own result.">
+<meta property="og:url" content="https://bmnpeach.github.io/precedent-search-guide/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M9 11h14M9 16h14M9 21h9' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Left rail: section ticks, visible at every width -->
+<nav class="rail" aria-label="Sections">
+  <a href="#top" data-rail="1" title="Start here">1</a>
+  <a href="#s2" data-rail="2" title="What success looks like">2</a>
+  <a href="#s3" data-rail="3" title="To Get You There">3</a>
+  <a href="#s4" data-rail="4" title="The plan">4</a>
+  <a href="#s5" data-rail="5" title="Piece 1: Set up the free builder">5</a>
+  <a href="#s6" data-rail="6" title="Piece 2: Create the strategy">6</a>
+  <a href="#s7" data-rail="7" title="Piece 3: Get your documents ready">7</a>
+  <a href="#s8" data-rail="8" title="Then run the experiment">8</a>
+  <a href="#s9" data-rail="9" title="What this leaves you with">9</a>
+</nav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#4F46E5"/><path d="M9 11h14M9 16h14M9 21h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span class="brand-name">Precedent&nbsp;Guide</span>
+    </a>
+    <span class="sec-indicator" id="sec-indicator">Section 1 of 9 &middot; Start here</span>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ 1. HERO ============ -->
+  <div class="hero" id="top" data-sec="1" data-title="Start here">
+    <div class="wrap">
+      <p class="eyebrow">A build guide</p>
+      <h1>How to Make the First Version of Your Legal Precedent-Finding Search Agent</h1>
+      <p class="subtitle">Made for Gaurav</p>
+      <p class="lead">I asked myself 'what's the quickest way I'd build a precedent-finding search agent' such that you can execute it yourself.</p>
+      <p class="lead">To do so, here is a step-by-step guide with specific prompts and things for you. For small doubts, I'm sure GPT Astra can read this and help you troubleshoot. For larger ones, feel free to reach out to me.</p>
+      <ul class="map-chips" aria-label="What is on this page">
+        <li><a href="#s2"><span class="chip-n">2</span> What success looks like</a></li>
+        <li><a href="#s3"><span class="chip-n">3</span> To Get You There</a></li>
+        <li><a href="#s4"><span class="chip-n">4</span> The plan</a></li>
+        <li><a href="#s5"><span class="chip-n">5</span> Piece 1</a></li>
+        <li><a href="#s6"><span class="chip-n">6</span> Piece 2</a></li>
+        <li><a href="#s7"><span class="chip-n">7</span> Piece 3</a></li>
+        <li><a href="#s8"><span class="chip-n">8</span> The experiment</a></li>
+        <li><a href="#s9"><span class="chip-n">9</span> What you are left with</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- ============ 2. WHAT SUCCESS LOOKS LIKE ============ -->
+    <section class="section" id="s2" data-sec="2" data-title="What success looks like">
+      <p class="kicker">Section 2 of 9 &middot; the target</p>
+      <h2>What success looks like</h2>
+      <p class="section-sub">Write the target down first. Every fix below is scored against this sentence.</p>
+
+      <blockquote class="goal-quote">Think about the most recent question you searched for as a human being, in your own files, and the process you followed to answer it. Success here means we can reproduce that exact search, find all the right documents exhaustively, and hand you something you can check line by line against your real human output.</blockquote>
+
+      <p>Three things that sentence asks for:</p>
+      <ul class="checklist mini">
+        <li>The agent reproduces the exact search you did by hand.</li>
+        <li>It finds all the right documents, exhaustively.</li>
+        <li>You can check its answer line by line against your own.</li>
+      </ul>
+
+      <a class="next-link" href="#s3">
+        <span><small>Next</small>To Get You There</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 3. TO GET YOU THERE ============ -->
+    <section class="section" id="s3" data-sec="3" data-title="To Get You There">
+      <p class="kicker">Section 3 of 9 &middot; choose a route</p>
+      <h2>To Get You There</h2>
+      <p class="section-sub">There are two ways to do this. One is thorough and heavier. One is simple and enough for a first version. I suggest the simple one.</p>
+
+      <div class="routes">
+        <div class="route">
+          <p class="lab">Complete version</p>
+          <p><strong>Use RAG.</strong> RAG means the AI looks up the right pieces of your documents before it answers. It is the standard choice when you have a very large number of documents. It also takes more setup and more upkeep.</p>
+        </div>
+        <div class="route pick">
+          <p class="lab">Simple version, for a prototype</p>
+          <p><strong>Give every document a short summary and tags, then search those.</strong> Same goal, far fewer moving parts. You can still move to RAG later, and the work you do now carries over.</p>
+          <span class="route-tag">The route this guide follows</span>
+        </div>
+      </div>
+
+      <a class="next-link" href="#s4">
+        <span><small>Next</small>The plan</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 4. THE PLAN ============ -->
+    <section class="section" id="s4" data-sec="4" data-title="The plan">
+      <p class="kicker">Section 4 of 9 &middot; the map</p>
+      <h2>The plan</h2>
+      <p class="section-sub">Here is the plan I would follow, using a free tool called OpenCode to build small pieces you can test one at a time. Your own AI advisor stays in the loop: it checks the plan and tells you what to fix, while OpenCode does the building.</p>
+
+      <img class="flow" src="flow.png" alt="Four steps from top to bottom: set up OpenCode, make the plan, prepare your documents, run the experiment, with an arrow from the last step back to the third.">
+      <p class="cap">The four steps. The last one loops back until it matches your own result.</p>
+
+      <p>The rest of this page follows the loop in that diagram, one piece at a time.</p>
+
+      <details class="acc">
+        <summary>What is OpenCode?</summary>
+        <div>
+          <p>OpenCode is a free, open source AI assistant that works inside a folder on your computer. You tell it what you want in plain language. It reads your files, writes the small programs, runs them and shows you the result. Think of it as a very fast assistant who does the building while you do the judging.</p>
+          <p>One thing to know: it needs an AI model to think with. Some free models are offered inside the app, but they change over time and the privacy terms differ. Check them before you use real client documents.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary>What do I actually feed?</summary>
+        <div>
+          <ul>
+            <li>Copies of 10 to 20 documents you are allowed to use. Never your only copy.</li>
+            <li>The most recent question you searched for, written the way you would say it.</li>
+            <li>The steps you took to find the answer, in order.</li>
+            <li>The documents you ended up using. This is your answer key.</li>
+          </ul>
+          <p>Start with documents that are not sensitive, or with client details removed, until you know where the data goes.</p>
+        </div>
+      </details>
+
+      <a class="next-link" href="#s5">
+        <span><small>Next</small>Piece 1: Set up the free builder</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 5. PIECE 1 ============ -->
+    <section class="section" id="s5" data-sec="5" data-title="Piece 1: Set up the free builder">
+      <p class="kicker">Section 5 of 9 &middot; piece 1 of 3</p>
+      <h2>Piece 1: Set up the free builder</h2>
+      <p class="section-sub">Nothing else works until this is in place. It takes about ten minutes.</p>
+
+      <ol class="steps">
+        <li>
+          <div class="step-body">
+            <p>Copy this prompt into ChatGPT:</p>
+            <div class="copyblock">
+              <div class="copyhead"><span>Setup: install OpenCode and load my config</span><button type="button" class="copy-btn" data-copy="p0">Copy</button></div>
+              <pre class="prompt" id="p0">First read opencode.ai/download and install it for me. Then Read the README.md at https://github.com/bmnpeach/opencode-config. Clone that repo and follow the setup instructions inside it. Break this into sub-tasks and Update your to do's accordingly.</pre>
+            </div>
+          </div>
+        </li>
+        <li>Make a new folder on your computer called precedent-search. Inside it, make a folder called documents.</li>
+        <li>Open OpenCode in the precedent-search folder.</li>
+        <li>When it asks you to connect a model, pick one of the options it offers and follow the steps.</li>
+      </ol>
+
+      <div class="done-box">
+        <span class="done-label">You are done when</span>
+        <p>You can type "hello" into OpenCode and it answers.</p>
+      </div>
+
+      <a class="next-link" href="#s6">
+        <span><small>Next</small>Piece 2: Create the strategy</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 6. PIECE 2 ============ -->
+    <section class="section" id="s6" data-sec="6" data-title="Piece 2: Create the strategy">
+      <p class="kicker">Section 6 of 9 &middot; piece 2 of 3</p>
+      <h2>Piece 2: Create the strategy</h2>
+      <p class="section-sub">This prompt makes OpenCode ask you the right questions first, instead of guessing what you want.</p>
+
+      <div class="copyblock">
+        <div class="copyhead"><span>Prompt 1: the plan</span><button type="button" class="copy-btn" data-copy="p1">Copy</button></div>
+        <pre class="prompt" id="p1">I am a lawyer. I want to build a small tool that finds legal precedents in my own documents. I am not a programmer, so explain everything in plain language and do one small piece at a time.
+
+First, ask me for my most recent real search: the question, the steps I followed, and the documents I ended up using. Write it down in a file called ANSWER_KEY.md. Do not change anything else yet.
+
+Then write a plan with these pieces, in this order:
+1. Turn my scanned files into readable text, keeping the page numbers.
+2. Write a short summary for each document, with main tags and secondary tags.
+3. Build a simple way to search those summaries and tags, then read the matching pages.
+4. Answer my question with a list of documents and page references I can check.
+5. Compare the answer with ANSWER_KEY.md and list what was missed.
+
+Do not use embeddings or a vector database. Never edit my original files; work on copies. After each piece, stop and tell me how to check it before you continue. Keep a file called LOG.md with what you did and what failed.</pre>
+      </div>
+
+      <ol class="steps">
+        <li>Paste it into OpenCode and answer its questions about your most recent search.</li>
+        <li>Copy the plan it writes and show it to your AI advisor. Ask: "What is missing or risky in this plan for a lawyer?"</li>
+        <li>Give OpenCode the advisor's answer and let it update the plan.</li>
+      </ol>
+
+      <div class="done-box">
+        <span class="done-label">You are done when</span>
+        <p>You have a plan you understand, and a file called ANSWER_KEY.md with your own search written down.</p>
+      </div>
+
+      <a class="next-link" href="#s7">
+        <span><small>Next</small>Piece 3: Get your documents ready</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 7. PIECE 3 ============ -->
+    <section class="section" id="s7" data-sec="7" data-title="Piece 3: Get your documents ready">
+      <p class="kicker">Section 7 of 9 &middot; piece 3 of 3</p>
+      <h2>Piece 3: Get your documents ready</h2>
+      <p class="section-sub">The tool can only find what it can read. A scan is a picture. This step turns each document into text, a short summary and tags, so a search can find it.</p>
+
+      <ol class="steps">
+        <li>Copy your 10 to 20 documents into the documents folder.</li>
+        <li>Paste the prompt below. It starts with five documents so you can check the quality early.</li>
+        <li>Open a few of the summaries and check them against the originals. Tell OpenCode what to change, then let it do the rest.</li>
+      </ol>
+
+      <div class="copyblock">
+        <div class="copyhead"><span>Prompt 2: prepare the documents</span><button type="button" class="copy-btn" data-copy="p2">Copy</button></div>
+        <pre class="prompt" id="p2">Look in the folder called documents. For each file:
+1. If it is a scan or image, read it with an OCR step and save a text version next to it, one file per document, with the page number marked at the start of every page.
+2. Write a short summary (five lines at most): what the document is, who the parties are, the court or authority, the date, and the legal point it decides.
+3. Add primary tags (the main legal topics) and secondary tags (narrower issues, statutes, terms).
+Save the summaries and tags in one file called INDEX.md, one entry per document, with the file name and page numbers.
+Start with the first five documents only. Stop and show me the result so I can check it.</pre>
+      </div>
+
+      <div class="done-box">
+        <span class="done-label">You are done when</span>
+        <p>Every document has text, a summary and tags, and the five you checked match the originals.</p>
+      </div>
+
+      <details class="acc">
+        <summary>What if my database only works in a browser?</summary>
+        <div>
+          <p>If you cannot export the documents, leave that for later. Start with the documents you already hold as files. Searching a browser-only database is a separate job, and it depends on what access you are allowed.</p>
+        </div>
+      </details>
+
+      <a class="next-link" href="#s8">
+        <span><small>Next</small>Then run the experiment</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 8. RUN THE EXPERIMENT ============ -->
+    <section class="section" id="s8" data-sec="8" data-title="Then run the experiment">
+      <p class="kicker">Section 8 of 9 &middot; the loop</p>
+      <h2>Then run the experiment</h2>
+      <p class="section-sub">This is where you find out if it works. The agent acts like you. You judge it against your own result, and keep telling it how to fix the database until it matches.</p>
+
+      <div class="copyblock">
+        <div class="copyhead"><span>Prompt 3: run the search</span><button type="button" class="copy-btn" data-copy="p3">Copy</button></div>
+        <pre class="prompt" id="p3">Act like me. Take the question in ANSWER_KEY.md and search only the prepared files, using INDEX.md first and then reading the pages that match.
+Show each step you took, in order, like a human researcher would.
+At the end give me: every document you would use and the page numbers, a one-line reason for each, and anything you are not sure about.
+Do not use anything outside these files.</pre>
+      </div>
+
+      <p>Now compare what it found with your answer key. Where it missed something, take both to your AI advisor.</p>
+
+      <div class="copyblock">
+        <div class="copyhead"><span>Prompt 4: ask your advisor how to fix it</span><button type="button" class="copy-btn" data-copy="p4">Copy</button></div>
+        <pre class="prompt" id="p4">Here is what the agent found: [paste its result].
+Here is my own result from ANSWER_KEY.md: [paste it].
+What did the agent miss or get wrong, and why? Give me one clear instruction I can paste into OpenCode to fix it. Look at the tags, the summaries and the search steps before anything else.</pre>
+      </div>
+
+      <p>Paste the advisor's instruction into OpenCode, then run Prompt 3 again. Repeat until the agent finds what you found.</p>
+
+      <div class="done-box">
+        <span class="done-label">You are done when</span>
+        <p>The agent finds the same documents you did, with page numbers you can check.</p>
+      </div>
+
+      <a class="next-link" href="#s9">
+        <span><small>Next</small>What this leaves you with</span>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ 9. WHAT THIS LEAVES YOU WITH ============ -->
+    <section class="section" id="s9" data-sec="9" data-title="What this leaves you with">
+      <p class="kicker">Section 9 of 9 &middot; the outcome</p>
+      <h2>What this leaves you with</h2>
+      <p class="section-sub">Several agents working together, set up quickly and simply, without paying for a custom build.</p>
+
+      <ul class="checklist">
+        <li>Your own search written down as ANSWER_KEY.md, the key every run is scored against.</li>
+        <li>Every document turned into readable text with a five-line summary and tags.</li>
+        <li>A search agent that answers with documents and page numbers you can check.</li>
+        <li>A repair loop: compare, ask the advisor, paste the fix, run again.</li>
+        <li>Three roles working together: the advisor plans and checks, OpenCode builds, the agent searches while you judge.</li>
+        <li>A project folder you can hand to the next version, or to a developer, without starting over.</li>
+      </ul>
+    </section>
+
+  </div><!-- /wrap -->
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p><strong>For Gaurav,</strong> from <a href="https://www.linkedin.com/in/namanmbhatnagar/">Naman Bhatnagar</a>.</p>
+      <p>Words are Naman&rsquo;s, structure is new. Built October 2026. Expect edits.</p>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var sections = [].slice.call(document.querySelectorAll('[data-sec]'));
+  var railLinks = [].slice.call(document.querySelectorAll('.rail a[data-rail]'));
+  var indicator = document.getElementById('sec-indicator');
+
+  function onScroll() {
+    var y = (window.scrollY || window.pageYOffset) + 150;
+    var cur = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top + (window.scrollY || window.pageYOffset) <= y) {
+        cur = sections[i];
+      }
+    }
+    var n = cur.getAttribute('data-sec');
+    var t = cur.getAttribute('data-title');
+    indicator.textContent = 'Section ' + n + ' of 9 \u00B7 ' + t;
+    railLinks.forEach(function (a) {
+      if (a.getAttribute('data-rail') === n) { a.classList.add('active'); }
+      else { a.classList.remove('active'); }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    var src = document.getElementById(btn.getAttribute('data-copy'));
+    if (!src) return;
+    var text = src.textContent;
+
+    var done = function () {
+      var old = btn.textContent;
+      btn.textContent = 'Copied \u2713';
+      btn.classList.add('copied');
+      setTimeout(function () { btn.textContent = old; btn.classList.remove('copied'); }, 1600);
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(text, done); });
+    } else {
+      fallback(text, done);
+    }
+  });
+
+  function fallback(text, cb) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    ta.parentNode.removeChild(ta);
+    if (ok) { cb(); }
+  }
+})();
+</script>
+</body>
+</html>
